@@ -165,7 +165,7 @@ function myTime(){
             time = parseInt(b) * 60 + parseInt(c);
             
             if(fajr1 <  time && dhuhr1 > time){
-                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(dhuhr1 - time);
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(dhuhr1  - time);
                 document.getElementById("gebetszeit0").style.color = "red";
             }
             if(dhuhr1 <  time && asr1 > time){
@@ -181,7 +181,7 @@ function myTime(){
                 document.getElementById("gebetszeit3").style.color = "red";
             }
             if(isha1 < time){
-                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(fajr1 - time);
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln((fajr1 + 24* 60) - time);
                 document.getElementById("gebetszeit").style.color = "red";
             }
         }
