@@ -163,23 +163,55 @@ function myTime(){
             maghrib1 = parseInt(maghrib[0]) * 60 + parseInt(maghrib[1]);
             isha1 = parseInt(isha[0]) * 60 + parseInt(isha[1]);
             time = parseInt(b) * 60 + parseInt(c);
-            console.log(time);
             
             if(fajr1 <  time && dhuhr1 > time){
-                alert("fajr");
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(dhuhr1 - time);
+                document.getElementById("gebetszeit0").style.color = "red";
             }
             if(dhuhr1 <  time && asr1 > time){
-                alert("dhuhr");
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(asr1 - time);
+                document.getElementById("gebetszeit1").style.color = "red";
             }
             if(asr1 <   time && maghrib1 > time){
-                alert("asr");
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(maghrib1 - time);
+                document.getElementById("gebetszeit2").style.color = "red";
             }
             if(maghrib1 <   time && isha1 > time){
-                alert("maghrib");
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(isha1 - time);
+                document.getElementById("gebetszeit3").style.color = "red";
             }
             if(isha1 < time){
-                alert("ishaa");
+                document.getElementById("zeitbiszumnaechstengebet").innerText = MinutenUmwandeln(fajr1 - time);
+                document.getElementById("gebetszeit").style.color = "red";
             }
+        }
+
+        
+            
+        function MinutenUmwandeln(str){
+            var h = 0, m = 0, s = 60 - d;
+
+            while(str>60){
+                str = str -60;
+                h = h+ 1;
+            }
+            if(h==0){
+                h = "0";
+            }
+            if(s==0){
+                s = "0";
+            }
+            m=str;
+            if(h<= 9){
+                h = "0" + h;
+            }
+            if(m<= 9){
+                m = "0" + m;
+            }
+            if(s<= 9){
+                s = "0" + s;
+            }
+            return h + ":" + m + ":" + s ;
         }
 
     </script>
