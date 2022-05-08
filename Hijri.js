@@ -10,7 +10,7 @@ var HijriJS = {
 	},
 	toGregorian : function toGregorian(dateString, splitter) {
 		if (!splitter)
-			splitter = "/";
+			splitter = ".";
 		// default splitter
 		var arrDate = dateString.split(splitter);
 		if (arrDate.length >= 3)
@@ -18,7 +18,7 @@ var HijriJS = {
 	},
 	toHijri : function toHijri(dateString, splitter) {
 		if (!splitter)
-			splitter = "/";
+			splitter = ".";
 		// default splitter
 		var arrDate = dateString.split(splitter);
 		if (arrDate.length >= 3)
@@ -124,7 +124,7 @@ var HijriJS = {
 		if (year <= 0) {
 			year--;
 		}// No year zero
-		return new Date(year + "/" + (month+1) + "/" + day);
+		return new Date(year + "." + (month+1) + "." + day);
 	},
 	HDate : function HDate(year, month, day) {
 		this.year = year;
@@ -178,7 +178,7 @@ var HijriJS = {
 	},
 	lang : {
 		'en' : {
-			notation : 'H', // ex. 01/01/1434H
+			notation : '', // ex. 01/01/1434H
 			zero : '0',
 			one : '1',
 			two : '2',
