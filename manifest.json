@@ -1,0 +1,10 @@
+{
+    "name": "Gebetszeiten | Köln",
+    "short_name": "Gebetszeiten",
+    "theme_color": "#4a4a4a",
+    "background_color": "#4a4a4a",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+  }
